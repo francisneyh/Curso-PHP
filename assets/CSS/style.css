@@ -1,0 +1,74 @@
+* {
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box; /*content-box = a medida (100 por 100) se aplica somente ao conteudo, nao leva em consideracao a border, margin, padding*/
+    /*border-box = leva em consideração o conteúdo, padding, border, margin. A margin sempre fica fora da caixa, e é usada para separar duas caixas/elementos na página*/
+}
+
+body {
+    height: 100vh;
+    margin: 0px;
+    display: grid; /*Grid = definir linhas e colunas e colocar os elementos dentro dessas linhas e colunas*/
+    grid-template-rows: 120px 1fr 60px; /*3 linhas = cabeçalho 120px, conteudo 1fr(fragmento ocupa de forma relativa), footer 60px*/
+    grid-template-columns: 1fr; /*Uma coluna, vai ocupar a tela inteira*/
+    grid-template-areas: 
+        "cabecalho"
+        "principal" 
+        "rodape"; /*define as areas que seram ocupadas, utiliza o nome definido no grid-area*/
+}
+
+.cabecalho {
+    grid-area: cabecalho;
+    background-color: #1867c0;
+    color: white;
+    display: flex; /*por padrão os elementos ficam na mesma só com o flex*/
+    flex-direction: column; /*muda a direção do flex, com os column os elementos ficam no eixo da coluna. row-reverse = troca a ordem dos elementos e alinha do lado direito. column-reverse = troca a ordem dos elementos e coloca elementos no eixo da coluna e embaixo*/
+    /*O flex-direction é a propriedade que define qual é o eixo principal (main axis) e secundário (cross axis)*/   
+    justify-content: center; /*aplica o alinhamento no conteiner do flex em cima do eixo principal. flex-end = final do eixo principal. Alinha o eixo principal (coluna) com o final. flex-start = alinha os elementos em cima. center = centraliza os elementos. space-between = espaço entre os dois elementos. space-around = deixa espaço em cima e embaixo e entre os elementos. space-between = somente espaço entre os dois elementos. Alinha elementos no main axis*/
+    align-items: center; /*alinha itens no cross axis*/
+    padding-bottom: 10px;
+    z-index: 1; /*deixa o elemento acima dos outros*/
+    box-shadow: 0px 4px 9px -2px rgba(0, 0, 0, 0.75); /*faz uma sombra no box/elemento*/
+}   
+
+.cabecalho > h1 {
+    margin: 10px;
+    font-weight: 300;
+    font-size: 2.8rem; 
+}
+
+.cabecalho > h2 {
+    margin: 0px;
+    font-weight: 200;
+    font-size: 1.6rem; 
+}
+
+.principal {
+    grid-area: principal;
+    height: calc(100vh - 180px); /*180px é o tamanho do header e do footer, logo vai ocupa o restante da area */
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.conteudo {
+    position: relative;
+    height: 100%;
+    overflow-y: scroll; /*overflow-y: scroll -> habilita a barra de rolagem*/
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2); 
+}
+
+.rodape {
+    grid-area: rodape;
+    background-color: #fff;
+    /*position: sticky; /*manter o rodapé parado, sempre visivel*/
+   /* bottom: 0px;*/
+    display: flex;
+    justify-content: flex-end; /*está mexendo com o main axis (por padrão é uma linha)*/
+    align-items: center; /*alinhar o cross axis , centralizar*/
+    font-size: 1.2em;
+    padding: 0px;
+    color: #444;
+    position: sticky; /*rodape fica sempre aparecendo/grudado com o position: sticky*/
+    bottom: 0;;
+}
