@@ -20,7 +20,7 @@ body {
     grid-area: cabecalho;
     background-color: #1867c0;
     color: white;
-    display: flex; /*por padrão os elementos ficam na mesma só com o flex*/
+    display: flex; /*por padrão os elementos ficam na mesma linha só com o flex*/
     flex-direction: column; /*muda a direção do flex, com os column os elementos ficam no eixo da coluna. row-reverse = troca a ordem dos elementos e alinha do lado direito. column-reverse = troca a ordem dos elementos e coloca elementos no eixo da coluna e embaixo*/
     /*O flex-direction é a propriedade que define qual é o eixo principal (main axis) e secundário (cross axis)*/   
     justify-content: center; /*aplica o alinhamento no conteiner do flex em cima do eixo principal. flex-end = final do eixo principal. Alinha o eixo principal (coluna) com o final. flex-start = alinha os elementos em cima. center = centraliza os elementos. space-between = espaço entre os dois elementos. space-around = deixa espaço em cima e embaixo e entre os elementos. space-between = somente espaço entre os dois elementos. Alinha elementos no main axis*/
@@ -71,4 +71,45 @@ body {
     color: #444;
     position: sticky; /*rodape fica sempre aparecendo/grudado com o position: sticky*/
     bottom: 0;;
+}
+
+.modulos {
+    display: flex;
+    flex-wrap: wrap; /*quebra linha*/
+    justify-content: space-around; /*deixa espaço entre os elementos (lado esquerdo e direito)*/
+}
+
+.modulo {
+    flex-basis: 32%; /*define o tamnanho que o elemento ocupa na tela*/
+}
+
+.modulo > h3 {
+    margin: 0; /*sem/tirou toda  margem*/
+    color:#fff;
+    font-weight: 300;
+    font-size: 1.5em;
+    padding: 10px 20px; /*10px no eixo vertical e 20px no eixo horizontal*/
+    background-color: #1867c0;
+}   
+
+.modulo > ul {
+    margin: 0px; /*sem/tirou toda  margem*/
+    padding: 10px; /*padding de 10px em todas direções*/
+    list-style: none; /*remove os marcadores de bolinha da lista*/
+}
+
+.modulo > ul > li {
+    padding: 7px;
+    font-size: 1.2em;
+    cursor: pointer; /*quando passa o mouse em cima dos links (li) ele simboliza que é um link*/
+}
+
+.modulo > ul > li > a {
+    display: flex;
+    text-decoration: none; /*tira a decolação do texto, no caso o sublinhado*/
+    color: #222;
+}
+
+.modulo > ul > li:hover { /*hover = quando passa o mouse por cima exibe um efeito, no caso quando passa o mouse exibe a cor cinza de fundo*/
+    background-color: #EEE;
 }
