@@ -81,6 +81,8 @@ body {
 
 .modulo {
     flex-basis: 32%; /*define o tamnanho que o elemento ocupa na tela*/
+    margin-bottom: 10px; /*define uma margem na parte de baixo*/
+    border-radius: 5px; /*arredonda as bordas*/
 }
 
 .modulo > h3 {
@@ -113,3 +115,30 @@ body {
 .modulo > ul > li:hover { /*hover = quando passa o mouse por cima exibe um efeito, no caso quando passa o mouse exibe a cor cinza de fundo*/
     background-color: #EEE;
 }
+
+.modulo.verde { border: 2px solid #4caf50;}
+.modulo.verde > h3 {background-color: #4caf50;}
+
+.modulo.vermelho { border: 2px solid #f44336;}
+.modulo.vermelho > h3 {background-color: #f44336;}
+
+.modulo.azul { border: 2px solid #2196f3;}
+.modulo.azul > h3 {background-color: #2196f3;}
+
+.modulo.roxo { border: 2px solid #9C27B0;}
+.modulo.roxo > h3 {background-color: #9C27B0;}
+
+.modulo.laranja { border: 2px solid #FF9800;}
+.modulo.laranja > h3 {background-color: #FF9800;}
+
+.modulo.verde-escuro { border: 2px solid #1B5E20;}
+.modulo.verde-escuro > h3 {background-color: #1B5E20;}
+
+.modulo.vermelho-escuro { border: 2px solid #b71c1c;}
+.modulo.vermelho-escuro > h3 {background-color: #b71c1c;}
+
+.modulo.azul-escuro { border: 2px solid #0d47a1;}
+.modulo.azul-escuro > h3 {background-color: #0d47a1;}
+
+.modulo.roxo-escuro { border: 2px solid #4a148c;}
+.modulo.roxo-escuro > h3 {background-color: #4a148c;}
