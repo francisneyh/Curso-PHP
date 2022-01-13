@@ -28,7 +28,7 @@
         justify-content: center;
     }
 
-    <s?= "[azul]" ?> {
+    <?= "[azul]" ?> {
         color: #4286f4;
     }
 
